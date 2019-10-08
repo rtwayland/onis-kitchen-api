@@ -1,0 +1,15 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base", "prettier"],
+  "plugins": ["import", "jest"],
+  "rules": {
+    "no-unused-vars": ["error", { "args": "none" }],
+    "no-use-before-define": ["error", { "functions": false }],
+    "import/prefer-default-export": "off"
+  }
+}
