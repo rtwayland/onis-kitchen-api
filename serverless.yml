@@ -43,6 +43,14 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  getRecipes:
+    handler: functions/getRecipes.main
+    events:
+      - http:
+          path: recipes
+          method: get
+          cors: true
+          authorizer: aws_iam
   getRecipe:
     handler: functions/getRecipe.main
     events:
