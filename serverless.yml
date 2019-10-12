@@ -63,7 +63,7 @@ functions:
     handler: functions/listRecipes.main
     events:
       - http:
-          path: recipes/list/{key}/{value}
+          path: recipes/search/{value}
           method: get
           cors: true
           authorizer: aws_iam
@@ -86,4 +86,3 @@ functions:
 resources:
   # API Gateway Errors
   - ${file(resources/api-gateway-errors.yml)}
-

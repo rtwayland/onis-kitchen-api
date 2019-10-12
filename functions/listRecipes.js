@@ -1,17 +1,18 @@
 import * as dynamoDbLib from '../libs/dynamodb-lib';
 import { success, failure } from '../libs/response-lib';
+import { normalizeText } from '../libs/utils';
 
 export async function main(event, context) {
   const {
-    pathParameters: { key, value },
+    pathParameters: { value },
   } = event;
   const params = {
     TableName: 'recipes',
-    FilterExpression: '#key = :value',
+    FilterExpression: 'contains(#sname, :value)',
     ExpressionAttributeNames: {
-      '#key': key,
+      '#sname': 'searchName',
     },
-    ExpressionAttributeValues: { ':value': value },
+    ExpressionAttributeValues: { ':value': normalizeText(value) },
   };
 
   try {
