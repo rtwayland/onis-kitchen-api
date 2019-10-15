@@ -83,6 +83,22 @@ functions:
           method: delete
           cors: true
           authorizer: aws_iam
+  createUser:
+    handler: functions/users/createUser.main
+    events:
+      - http:
+          path: users
+          method: post
+          cors: true
+          authorizer: aws_iam
+  updateUser:
+    handler: functions/users/updateUser.main
+    events:
+      - http:
+          path: users
+          method: put
+          cors: true
+          authorizer: aws_iam
 resources:
   # API Gateway Errors
   - ${file(resources/api-gateway-errors.yml)}
