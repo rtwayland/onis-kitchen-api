@@ -1,7 +1,6 @@
 {
   "pathParameters": {
-    "key": "category",
-    "value": "dessert"
+    "value": "star wars"
   },
   "requestContext": {
     "identity": {

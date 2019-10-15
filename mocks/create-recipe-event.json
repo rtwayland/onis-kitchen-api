@@ -1,5 +1,5 @@
 {
-  "body": "{\"name\":\"Chicken\",\"category\":\"entre\",\"notes\":\".\",\"isFavorite\": false,\"tags\":[\"meat\"],\"attachment\":\"chicken.jpg\"}",
+  "body": "{\"name\":\"Lemon Chicken\",\"category\":\"entre\",\"notes\":\".\",\"isFavorite\": false,\"tags\":[\"meat\"],\"attachment\":\"chicken.jpg\"}",
   "requestContext": {
     "identity": {
       "cognitoIdentityId": "USER-SUB-1234"
