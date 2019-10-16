@@ -83,6 +83,30 @@ functions:
           method: delete
           cors: true
           authorizer: aws_iam
+  createUserRecipeData:
+    handler: functions/user-recipe-data/createUserRecipeData.main
+    events:
+      - http:
+          path: user-recipe-data
+          method: post
+          cors: true
+          authorizer: aws_iam
+  getUserRecipeData:
+    handler: functions/user-recipe-data/getUserRecipeData.main
+    events:
+      - http:
+          path: user-recipe-data/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+  updateUserRecipeData:
+    handler: functions/user-recipe-data/updateUserRecipeData.main
+    events:
+      - http:
+          path: user-recipe-data/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
   createUser:
     handler: functions/users/createUser.main
     events:
@@ -90,15 +114,17 @@ functions:
           path: users
           method: post
           cors: true
-          authorizer: aws_iam
   updateUser:
     handler: functions/users/updateUser.main
     events:
       - http:
           path: users
+          method: options
+          cors: true
+      - http:
+          path: users
           method: put
           cors: true
-          authorizer: aws_iam
 resources:
   # API Gateway Errors
   - ${file(resources/api-gateway-errors.yml)}
