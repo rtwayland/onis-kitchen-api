@@ -4,7 +4,7 @@ import { success, failure } from '../libs/response-lib';
 import { normalizeText } from '../libs/utils';
 
 export async function main(event, context, callback) {
-  const { attachment, name, category, notes, isFavorite, tags } = JSON.parse(
+  const { attachments, name, category } = JSON.parse(
     event.body
   );
 
@@ -15,10 +15,7 @@ export async function main(event, context, callback) {
       name,
       searchName: normalizeText(name),
       category,
-      notes,
-      isFavorite,
-      tags,
-      attachment,
+      attachments,
       createdAt: Date.now(),
     },
   };
