@@ -107,6 +107,14 @@ functions:
           method: put
           cors: true
           authorizer: aws_iam
+  listFavoriteRecipes:
+    handler: functions/user-recipe-data/listFavoriteRecipes.main
+    events:
+      - http:
+          path: user-recipe-data/search/{userId}
+          method: get
+          cors: true
+          authorizer: aws_iam
   createUser:
     handler: functions/users/createUser.main
     events:
