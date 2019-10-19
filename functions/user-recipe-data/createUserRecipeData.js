@@ -9,7 +9,7 @@ export async function main(event, context) {
       id: data.id,
       userId: data.userId,
       recipeId: data.recipeId,
-      isFavorite: data.isFavorite,
+      isFavorite: data.isFavorite || false,
       tags: data.tags || [],
       notes: data.notes || [],
     },
