@@ -8,8 +8,10 @@ export async function main(event, context) {
     Key: {
       id: event.pathParameters.id,
     },
-    UpdateExpression: 'SET isFavorite = :isFav, tags = :tags, notes = :notes',
+    UpdateExpression: 'SET userId = :userId, recipeId = :recipeId, isFavorite = :isFav, tags = :tags, notes = :notes',
     ExpressionAttributeValues: {
+      ':userId': data.userId,
+      ':recipeId': data.recipeId,
       ':isFav': typeof data.isFavorite === 'boolean' ? data.isFavorite : null,
       ':tags': data.tags || null,
       ':notes': data.notes || null,
