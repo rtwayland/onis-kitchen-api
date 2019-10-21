@@ -7,9 +7,8 @@ export async function main(event, context) {
   } = event;
   const params = {
     TableName: 'user-recipe-data',
-    KeyConditionExpression: 'userId = :userId',
-    FilterExpression: 'isFavorite = true',
-    ExpressionAttributeValues: { ':userId': userId },
+    FilterExpression: 'userId = :userId and isFavorite = :isFav',
+    ExpressionAttributeValues: { ':userId': userId, ':isFav': true },
   };
 
   try {
